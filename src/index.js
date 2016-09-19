@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, hashHistory } from 'react-router';
-// import jQuery from 'jquery/dist/jQuery.js'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import 'bootstrap/dist/js/bootstrap.js'
+import 'highlight.js/styles/ocean.css'
+import './main.css'
 
 import Routers from './routers'
 

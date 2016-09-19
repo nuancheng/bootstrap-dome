@@ -12,7 +12,7 @@ class Home extends React.Component {
         return(
             <div>
                 <div className="jumbotron" style={{textAlign:'center'}}>
-                    <h1>hello</h1>
+                    <h1>你好</h1>
                     <p>do you live my home?</p>
                     <p><a className="btn btn-primary btn-lg" role="button" onClick={this.btnca.bind(this)}>go to about</a></p>
                     <p><a className="btn btn-primary btn-lg" role="button" onClick={this.btncb.bind(this)}>go to main</a></p>

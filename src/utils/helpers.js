@@ -23,7 +23,7 @@ function carddata(){
 }
 
 function gitmd(xss){
-    let ass=`https://raw.githubusercontent.com/nuancheng/dome-data/master/BIOG/${xss}.md`
+    let ass=`https://raw.githubusercontent.com/nuancheng/dome-data/master/BIOG/${xss}.md?${Math.random()}`
     return axios.get(ass)
     .then((md)=>({
             as:md.data

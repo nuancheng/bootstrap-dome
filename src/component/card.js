@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { hashHistory } from 'react-router'
+import { Router, Route, hashHistory,IndexRoute } from 'react-router'
 
 
 class Card extends React.Component {

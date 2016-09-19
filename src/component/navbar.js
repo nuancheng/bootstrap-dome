@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
-
 class Navbar extends React.Component {
     render () {
         return(
@@ -57,16 +56,3 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
-
-// <ul className="nav nav-tabs" role="tablist">
-//     <h1>你好</h1>
-//     <li role="presentation">
-//         <Link activeStyle={{backgroundColor:'yellow',color:'#fff'}} onlyActiveOnIndex={true} to="/">Home</Link>
-//     </li>
-//     <li role="presentation">
-//         <Link activeStyle={{backgroundColor:'yellow',color:'#fff'}} to="/a">about</Link>
-//     </li>
-//     <li role="presentation">
-//         <Link activeStyle={{backgroundColor:'yellow',color:'#fff'}} to="/m">main</Link>
-//     </li>
-// </ul>
