@@ -1,19 +1,38 @@
 import React, { PropTypes } from 'react'
+import { gitmd } from './utils/helpers.js'
+import marked from 'marked'
 
 class Blog extends React.Component {
-  render () {
-    // console.log(this.props);
-    return(
-      <div>
-        {this.props.params.title=='a' ? '我是A页面' :
-          this.props.params.title=='b' ? '我是B页面' :
-          this.props.params.title=='c' ? '我是C页面' :
-          this.props.params.title=='d' ? '我是D页面' :
-          this.props.params.title=='e' ? '我是E页面' : '您访问的页面没有内容'
+    constructor(){
+        super();
+        this.state={
+            data:'',
+            wait:true
         }
-      </div>
-    )
-  }
+    }
+    returns(){
+        return(marked(this.state.data))
+    }
+    componentDidMount() {
+        let xss=this.props.params.title
+            gitmd(xss)
+            .then((we)=>
+                   this.setState({
+                      data:we.as
+                  })
+             )
+             .catch(()=>{
+                 alert('404')
+             })
+
+    }
+    render () {
+        return(
+            <div style={{textAlign:'center'}}>
+                <div dangerouslySetInnerHTML={{__html: this.returns()}} />
+            </div>
+        )
+    }
 }
 
 export default Blog;

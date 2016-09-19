@@ -1,37 +1,31 @@
-import React, { PropTypes } from 'react';
-import axios from 'axios';
+import React, { PropTypes } from 'react'
+import Card from './component/card'
+import { carddata } from './utils/helpers.js'
 
 class About extends React.Component {
-  constructor(){
-    super();
-    this.state={
-      data:{},
-      wait:true
-    }
-  }
-  componentDidMount(){
-    axios.get('https://api.github.com/users/newming')
-      .then((res) => {
-        // console.log(res.data);
-        this.setState({
-          data:res.data,
-          wait:false
-        })
-      })
-      .catch(function (error) {
-        alert(error);
-      });
-  }
-  render () {
-    return(
-      <div>
-        {
-          this.state.wait ? '正在获取数据' :
-          <img src={this.state.data.avatar_url} />
+    constructor(){
+        super();
+        this.state={
+            data:[],
+            wait:true
         }
-      </div>
-    )
-  }
+    }
+    componentDidMount() {
+        carddata()
+        .then((we)=>
+               this.setState({
+                  data:we.as
+               })
+           )
+    }
+    render () {
+        let Carddata=this.state.data.map((item,k)=><Card {...item} key={k} />)
+        return(
+            <div className="row">
+            {Carddata}
+            </div>
+        )
+    }
 }
 
 export default About;
